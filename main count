@@ -16,7 +16,6 @@
 print('First;Second-1 Second-2;Third'.split(';'))
 # ['First', 'Second-1 Second-2', 'Third']
 '''
-
 students = {}
 a = []
 with open(r'dataset_3363_4.txt', 'r') as test:
@@ -25,8 +24,11 @@ with open(r'dataset_3363_4.txt', 'r') as test:
         students[student[0]] = student[1:]
 for values in students.values():
     a.append(values)
-    
-b, c, d, k = [], [], 0, 0
+b = []
+k = []
+d = 0
+c = 0
+
 for i in a:
     c = 0
     for j in i:
@@ -35,14 +37,14 @@ for i in a:
 print(*b, sep='\n')
 for i in range(len(a)):
     d += int(a[i][0])
-k.append(d / 3)
+k.append(d / len(students))
 d = 0
 for i in range(len(a)):
     d += int(a[i][1])
-k.append(d / 3)
+k.append(d / len(students))
 d = 0
 for i in range(len(a)):
     d += int(a[i][2])
-k.append(d / 3)
+k.append(d / len(students))
 d = 0
 print(*k)
