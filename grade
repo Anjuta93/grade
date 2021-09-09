@@ -17,12 +17,12 @@ print('First;Second-1 Second-2;Third'.split(';'))
 # ['First', 'Second-1 Second-2', 'Third']
 '''
 
+students = {}
+a = []
 with open(r'dataset_3363_4.txt', 'r') as test:
-    s = test.read().strip().split()
-print(s)
-a=[]
-b = []
-s = ';'.join(s).split(';')
-a = [s[i] for i in range(len(s)) if s[i].isdigit()]
+    for line in test:
+        student = line.strip().split(';')
+        students[student[0]] = student[1:]
+for values in students.values():
+    a.append(values)
 
-print(a)
